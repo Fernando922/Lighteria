@@ -1,12 +1,17 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {TouchableOpacity, Text, Image, StyleSheet} from 'react-native';
+import {FONT_FAMILY_REGULAR} from '../../../../styles';
+import {useNavigation} from '@react-navigation/native';
 
 const Item = ({image, title}) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.containerItem}>
+    <TouchableOpacity
+      style={styles.containerItem}
+      onPress={() => navigation.push('ProductDetails')}>
       <Image source={image} style={styles.image} resizeMode="contain" />
       <Text style={styles.text}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -24,7 +29,7 @@ const styles = StyleSheet.create({
   text: {
     marginTop: 8,
     fontSize: 14,
-    fontFamily: 'OpenSans-SemiBold',
+    fontFamily: FONT_FAMILY_REGULAR,
     color: '#848486',
   },
 

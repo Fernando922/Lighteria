@@ -1,5 +1,11 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
+import {
+  BACKGROUND_COLOR,
+  FONT_FAMILY_BOLD,
+  FONT_FAMILY_REGULAR,
+  FONT_SIZE_XX_LARGE,
+} from '../../../../styles';
 const Header = () => {
   return (
     <>
@@ -32,8 +38,8 @@ const styles = StyleSheet.create({
   },
 
   title: {
-    fontFamily: 'OpenSans-Bold',
-    fontSize: 28,
+    fontFamily: FONT_FAMILY_BOLD,
+    fontSize: FONT_SIZE_XX_LARGE,
   },
 
   bagContainer: {
@@ -62,8 +68,8 @@ const styles = StyleSheet.create({
   descriptionText: {
     padding: 34,
     fontSize: 16,
-    fontFamily: 'OpenSans-Regular',
-    backgroundColor: '#F4F0F4',
+    fontFamily: FONT_FAMILY_REGULAR,
+    backgroundColor: BACKGROUND_COLOR,
   },
 });
 
