@@ -1,5 +1,6 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
+import Sacola from '../../../../components/sacola';
 import {
   BACKGROUND_COLOR,
   FONT_FAMILY_BOLD,
@@ -11,12 +12,7 @@ const Header = () => {
     <>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Lighteria</Text>
-        <View style={styles.bagContainer}>
-          <Image
-            source={require('../../../../assets/images/icone-sacola.png')}
-            style={styles.image}
-          />
-        </View>
+        <Sacola />
       </View>
       <View>
         <View style={styles.divider} />
@@ -40,17 +36,6 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: FONT_FAMILY_BOLD,
     fontSize: FONT_SIZE_XX_LARGE,
-  },
-
-  bagContainer: {
-    padding: 18,
-    backgroundColor: '#fff',
-    borderRadius: 30,
-  },
-
-  image: {
-    height: 30,
-    width: 30,
   },
 
   divider: {

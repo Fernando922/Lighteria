@@ -1,12 +1,31 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, StyleSheet} from 'react-native';
+import Background from './components/background';
+import DescricaoItem from './components/descricaoItem';
 
-const ProductDetails = () => {
+const ProductDetails = ({route}) => {
+  const {image, title, itemDesc, studio, itemName, preco, id} = route.params;
+
   return (
-    <View>
-      <Text>ProductDetails</Text>
+    <View style={styles.container}>
+      <Background />
+      <DescricaoItem
+        image={image}
+        title={title}
+        itemDesc={itemDesc}
+        studio={studio}
+        itemName={itemName}
+        preco={preco}
+        id={id}
+      />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default ProductDetails;

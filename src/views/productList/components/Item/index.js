@@ -3,12 +3,22 @@ import {TouchableOpacity, Text, Image, StyleSheet} from 'react-native';
 import {FONT_FAMILY_REGULAR} from '../../../../styles';
 import {useNavigation} from '@react-navigation/native';
 
-const Item = ({image, title}) => {
+const Item = ({image, title, itemDesc, studio, itemName, preco, id}) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity
       style={styles.containerItem}
-      onPress={() => navigation.push('ProductDetails')}>
+      onPress={() =>
+        navigation.push('ProductDetails', {
+          image,
+          title,
+          itemName,
+          itemDesc,
+          studio,
+          preco,
+          id,
+        })
+      }>
       <Image source={image} style={styles.image} resizeMode="contain" />
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
